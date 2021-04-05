@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hi, {{ current_user.username }}!</h1>
+    <h2>Which year's accident data would you like to view?</h2>
+    {% for post in posts %}
+    <div><p><b>{{ post.body }}</b></p></div>
+    {% endfor %}
+    <form method="POST">
+        <label for="year">Year:</label><br>
+        <input type="text" id="year" name="year">
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}
